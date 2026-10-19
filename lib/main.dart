@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 import 'nav_bar.dart';
+import 'tecnologia.dart';
 
 void main() {
   runApp(const MeuPortfolio());
@@ -34,6 +35,10 @@ class _HomePageState extends State<HomePage> {
   NavPosition navPosition = NavPosition.left;
 
   final keys = List.generate(navItems.length, (_) => GlobalKey());
+  final Map<int, Widget> contents = {
+    1: const SobreCard(),
+    2: const TechSection(),
+  };
 
   void _goTo(int i) {
     setState(() => selectedIndex = i);
@@ -75,8 +80,7 @@ class _HomePageState extends State<HomePage> {
                     Section(
                       key: keys[i],
                       title: navItems[i].label,
-                      child: i == 1 ? const SobreCard() : null,
-                    ),
+                    child: contents[i]),
                 ],
               ),
             ),
