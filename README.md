@@ -55,13 +55,6 @@ Para gerar a versão de produção:
 ```bash
 flutter build web
 ```
-
-## Formulário de contato
-
-O formulário usa o [Formspree](https://formspree.io). Para ativá-lo no seu
-ambiente, crie um formulário lá e coloque o endereço na constante
-`formEndpoint`, no arquivo `lib/sections/contact_section.dart`.
-
 ## Autor
 
 **Jefferson Sued**
