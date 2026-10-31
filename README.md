@@ -2,8 +2,7 @@
 
 Meu portfólio pessoal, desenvolvido em **Flutter Web**.
 
-![Tela inicial do portfólio](<img width="1547" height="812" alt="image" src="https://github.com/user-attachments/assets/e312f31d-2af8-40d3-bddd-f54b1e007d20" />)
-
+![Tela inicial do portfólio](screenshots/home.png)
 ## Funcionalidades
 
 - Barra de navegação que o visitante pode alternar entre lateral e topo
