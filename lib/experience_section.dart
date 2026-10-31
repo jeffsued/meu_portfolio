@@ -42,7 +42,7 @@ const List<TimelineEntry> trajectoryList = [
     institution: 'Pesquisa Aplicada & Aperfeiçoamento Técnico',
     description:
         'Aprofundamento em boas práticas de programação, controle de versão colaborativo no GitHub, desenvolvimento de APIs RESTful e persistência com bancos de dados relacionais.',
-    technologies: ['SOLID', 'REST API', 'GitHub', 'Clean Code'],
+    technologies: ['SOLID', 'GitHub', 'Clean Code'],
   ),
 ];
 
