@@ -158,7 +158,6 @@ class _TimelineNodeCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
 
-                    // Instituição
                     Text(
                       entry.institution,
                       style: GoogleFonts.inter(

@@ -6,10 +6,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'app_colors.dart';
 import 'neofetch_terminal.dart';
 
-// Seção Principal (Hero)
 // Apresenta meu nome com tipografia marcante, animação de máquina de escrever
 // e o terminal interativo Neofetch com minhas informações acadêmicas e técnicas.
-
 class HeroSection extends StatefulWidget {
   final VoidCallback onProjectsTap;
   final VoidCallback onContactTap;
@@ -44,7 +42,6 @@ class _HeroSectionState extends State<HeroSection> {
   @override
   void initState() {
     super.initState();
-    // Inicia a digitação dinâmica e o cursor piscante
     _startTypewriter();
     _cursorTimer = Timer.periodic(const Duration(milliseconds: 500), (_) {
       if (mounted) setState(() => _showCursor = !_showCursor);
@@ -90,7 +87,6 @@ class _HeroSectionState extends State<HeroSection> {
     super.dispose();
   }
 
-  // Utilitário para abrir links externos em nova aba no Flutter Web
   Future<void> _launch(String url) async {
     await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank');
   }
@@ -106,7 +102,7 @@ class _HeroSectionState extends State<HeroSection> {
           isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Prompt de terminal simulando comando whoami
+
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
           decoration: BoxDecoration(
@@ -152,7 +148,6 @@ class _HeroSectionState extends State<HeroSection> {
         ),
         const SizedBox(height: 20),
 
-        // Tipografia com alto contraste: JEFFERSON (Branco) e SUED (Azul)
         RichText(
           textAlign: isDesktop ? TextAlign.start : TextAlign.center,
           text: TextSpan(
@@ -283,7 +278,7 @@ class _HeroSectionState extends State<HeroSection> {
         ),
         const SizedBox(height: 28),
 
-        // Atalhos para as minhas redes profissionais
+        // Atalhos para as minhas redes sociais
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
