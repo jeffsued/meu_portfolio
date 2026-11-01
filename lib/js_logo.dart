@@ -19,20 +19,20 @@ class JsAsciiLogo extends StatelessWidget {
        /-----------:\\
       /----------    \\
      /-------/shhOMMo-\\
-    /-----/shhM      M--:
-   /-----/shhS      ---M--:
+    /-----/shhM------ M--:
+   /-----/shhS---:---M--:
   /------MMMSSS---:---:\\
- |-------MMSSSS----:---:---
+ |-------MMSSSS----:---:--
  |---------SSSSSS--:---:---
   \\-------/    SSSSM:---:---
-   \\-MMMM--:    MMMSSSS------/
-    \\-MMM-----/    MMMSS-------
-     \\-shMM------/MMMS----------;
-      \\:MMMM---/hMMMS--------:
-       \\:dNdhhhSSSSSS----:----;
-        \\:sdNMMMMNDs---------:
-         \\----://:---------::
-          \\----------------://
+   \\-MMMM--:    MMMSSSS-----/
+    \\-MMM-----/    MMMSS----
+     \\-shMM------/MMMS-----;
+      \\:MMMM---/hMMMS-----:
+       \\:dNdhhhSSSSSS----;
+        \\:sdNMMMMNDs----:
+         \\----://:-----::
+          \\-----------://
 ''';
 
   @override

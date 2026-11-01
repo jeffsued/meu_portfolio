@@ -1,8 +1,10 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import 'app_colors.dart';
 import 'neofetch_terminal.dart';
 
@@ -35,6 +37,7 @@ class _HeroSectionState extends State<HeroSection> {
   String _currentText = '';
   int _charIndex = 0;
   bool _isDeleting = false;
+  bool isPaused = false;
   Timer? _typingTimer;
   Timer? _cursorTimer;
   bool _showCursor = true;
@@ -62,8 +65,16 @@ class _HeroSectionState extends State<HeroSection> {
           _charIndex++;
           if (_charIndex == currentFullText.length) {
             _isDeleting = true;
+            isPaused = true;
+            _typingTimer?.cancel();
+            Future.delayed(const Duration(milliseconds: 1800), () {
+              _typingTimer = Timer(
+                Duration(milliseconds: speed),
+                _startTypewriter,
+              );
+              isPaused = false;
+            }); // Pausa antes de apagar
             // Pausa de leitura antes de começar a apagar
-            _typingTimer = Timer(const Duration(milliseconds: 1800), _startTypewriter);
             return;
           }
         } else {
@@ -74,9 +85,11 @@ class _HeroSectionState extends State<HeroSection> {
             _titleIndex = (_titleIndex + 1) % _titles.length;
           }
         }
+        if (isPaused) {
+          return; // Evita que o próximo ciclo comece imediatamente após a pausa
+        }
+        _startTypewriter();
       });
-
-      _startTypewriter();
     });
   }
 
@@ -98,11 +111,11 @@ class _HeroSectionState extends State<HeroSection> {
 
     // Coluna esquerda com meu nome, títulos e botões de chamada
     final infoColumn = Column(
-      crossAxisAlignment:
-          isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+      crossAxisAlignment: isDesktop
+          ? CrossAxisAlignment.start
+          : CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
           decoration: BoxDecoration(

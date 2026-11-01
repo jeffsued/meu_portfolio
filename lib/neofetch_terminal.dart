@@ -160,7 +160,6 @@ class NeofetchTerminal extends StatelessWidget {
 
                         _sectionTitle('MAIN FOCUS:'),
                         _bulletLine('Java'),
-                        _bulletLine('Object-Oriented Programming'),
                         _bulletLine('Flutter / Dart'),
                         const SizedBox(height: 8),
 
